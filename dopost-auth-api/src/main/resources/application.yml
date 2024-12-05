@@ -1,0 +1,13 @@
+
+# API Authentication basic configuration
+server:
+ port: 8081
+spring:
+ application:
+  name: dopost-auth-api
+
+# Context Path
+dopost:
+ auth:
+  context:
+   path: /dopost-auth/api

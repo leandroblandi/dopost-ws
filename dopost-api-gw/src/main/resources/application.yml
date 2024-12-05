@@ -1,0 +1,17 @@
+
+# API GW Basic configuration
+server:
+ port: 8080
+ 
+spring:
+ application:
+  name: dopost-api-gw
+ 
+# Gateway configuration
+ cloud:
+  gateway:
+   routes:
+    - id: dopost-api-auth
+      uri: http://localhost:8081
+      predicates:
+       - Path=/dopost-auth/api/**  
