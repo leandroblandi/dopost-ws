@@ -1,5 +1,7 @@
 package com.dopost.auth.api.responses;
 
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Builder;
@@ -17,6 +19,7 @@ public class TokenResponse {
 	@JsonProperty("username")
 	private String username;
 	
+	@Builder.Default
 	@JsonProperty("authenticated_at")
-	private String date;
+	private LocalDateTime date = LocalDateTime.now();
 }
