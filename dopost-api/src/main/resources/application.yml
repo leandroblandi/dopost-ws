@@ -1,0 +1,10 @@
+spring:
+ application:
+  name: dopost-api
+
+server:
+ port: 8082
+ 
+dopost:
+ pagination:
+  size: 5

@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "dopost.pagination.size",
+  "type": "java.lang.String",
+  "description": "A description for 'dopost.pagination.size'"
+}]}
