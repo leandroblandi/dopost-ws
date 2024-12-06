@@ -10,8 +10,8 @@ public class JwtUtil {
 	public static final String HEADER_AUTHORIZATION = "Authorization";
 	public static final String CONTENT_TYPE = "application/json";
 	public static final Long TOKEN_DURATION_SEGS = 3600000L;
-	
+
 	private JwtUtil() {
-		
+
 	}
 }

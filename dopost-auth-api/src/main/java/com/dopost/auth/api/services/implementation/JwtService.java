@@ -20,19 +20,12 @@ public class JwtService implements IJwtService {
 	@Override
 	public TokenResponse generateJwt(String username, List<RoleEnum> roles) {
 		log.info("Generating JWT Token for username {} with roles: {}", username, roles);
-		return TokenResponse.builder()
-				.username(username)
-				.token(buildToken(username, roles))
-				.build();
+		return TokenResponse.builder().username(username).token(buildToken(username, roles)).build();
 	}
-	
+
 	private String buildToken(String username, List<RoleEnum> roles) {
-		return Jwts.builder()
-				.subject(username)
-				.claim("roles", roles)
-				.issuedAt(new Date())
+		return Jwts.builder().subject(username).claim("roles", roles).issuedAt(new Date())
 				.expiration(new Date(System.currentTimeMillis() + JwtUtil.TOKEN_DURATION_SEGS))
-				.signWith(JwtUtil.secretKey)
-				.compact();
+				.signWith(JwtUtil.secretKey).compact();
 	}
 }

@@ -12,13 +12,13 @@ import lombok.Setter;
 @Setter
 @Builder
 public class TokenResponse {
-	
+
 	@JsonProperty("auth_token")
 	private String token;
-	
+
 	@JsonProperty("username")
 	private String username;
-	
+
 	@Builder.Default
 	@JsonProperty("authenticated_at")
 	private LocalDateTime date = LocalDateTime.now();

@@ -14,15 +14,15 @@ import lombok.Setter;
 @Getter
 @Builder
 public class ApiResponse {
-	
+
 	@Builder.Default
 	@JsonProperty("date_time")
 	private LocalDateTime date = LocalDateTime.now();
-	
+
 	@Builder.Default
 	@JsonProperty("response_details")
 	private String details = "";
-	
+
 	@Builder.Default
 	@JsonProperty("status_code")
 	private HttpStatus status = HttpStatus.OK;

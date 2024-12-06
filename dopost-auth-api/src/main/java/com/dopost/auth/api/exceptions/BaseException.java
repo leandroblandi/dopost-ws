@@ -11,13 +11,13 @@ import lombok.Setter;
 @Getter
 @Setter(value = AccessLevel.PROTECTED)
 public abstract class BaseException extends RuntimeException {
-	
+
 	@Serial
 	private static final long serialVersionUID = -8570463022908613228L;
 
 	protected HttpStatus status;
 	protected String details;
-	
+
 	public BaseException(HttpStatus status, String details) {
 		super(details);
 		setStatus(status);

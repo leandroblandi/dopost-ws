@@ -11,7 +11,7 @@ import com.dopost.auth.api.responses.ApiResponse;
 @RestController
 @RequestMapping("${dopost.auth.context.path}")
 public class HealthController {
-	
+
 	@GetMapping("/v1/health")
 	public ResponseEntity<ApiResponse> check() {
 		ApiResponse response = ApiResponse.builder().details("Working!").build();

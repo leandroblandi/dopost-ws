@@ -9,11 +9,7 @@ public class CorsConfiguration implements WebMvcConfigurer {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry
-			.addMapping("/dopost-auth/api/**")
-			.allowedOrigins("http://localhost:8080")
-			.allowedMethods("GET", "POST", "PUT", "DELETE")
-			.allowedHeaders("*")
-			.allowCredentials(true);
+		registry.addMapping("/dopost-auth/api/**").allowedOrigins("http://localhost:8080")
+				.allowedMethods("GET", "POST", "PUT", "DELETE").allowedHeaders("*").allowCredentials(true);
 	}
 }
