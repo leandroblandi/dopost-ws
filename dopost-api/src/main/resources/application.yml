@@ -8,3 +8,9 @@ server:
 dopost:
  pagination:
   size: 5
+ api:
+  auth:
+   base:
+    url: http://localhost:8081/dopost-auth/api
+  context:
+   path: /dopost/api

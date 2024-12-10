@@ -1,5 +1,17 @@
-{"properties": [{
-  "name": "dopost.pagination.size",
-  "type": "java.lang.String",
-  "description": "A description for 'dopost.pagination.size'"
-}]}
+{"properties": [
+  {
+    "name": "dopost.pagination.size",
+    "type": "java.lang.String",
+    "description": "A description for 'dopost.pagination.size'"
+  },
+  {
+    "name": "dopost.api.auth.base.url",
+    "type": "java.lang.String",
+    "description": "A description for 'dopost.api.auth.base.url'"
+  },
+  {
+    "name": "dopost.api.context.path",
+    "type": "java.lang.String",
+    "description": "A description for 'dopost.api.context.path'"
+  }
+]}
