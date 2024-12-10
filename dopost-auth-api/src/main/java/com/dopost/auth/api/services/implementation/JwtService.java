@@ -22,10 +22,23 @@ public class JwtService implements IJwtService {
 		log.info("Generating JWT Token for username {} with roles: {}", username, roles);
 		return TokenResponse.builder().username(username).token(buildToken(username, roles)).build();
 	}
+	
+	@Override
+	public boolean isValidToken(String token) {
+		log.info("Trying to parse JWT Token: {}", token);
+		try {
+            Jwts.parser().verifyWith(JwtUtil.SECRET_KEY).build().parse(token);
+            return true;
+        } catch (Exception e) {
+        	log.error("Invalid token: {}", e);
+        	return false;
+        }
+	}
 
 	private String buildToken(String username, List<RoleEnum> roles) {
+		log.info("Building JWT Token for username: {} with roles: {}", username, roles);
 		return Jwts.builder().subject(username).claim("roles", roles).issuedAt(new Date())
 				.expiration(new Date(System.currentTimeMillis() + JwtUtil.TOKEN_DURATION_SEGS))
-				.signWith(JwtUtil.secretKey).compact();
+				.signWith(JwtUtil.SECRET_KEY).compact();
 	}
 }

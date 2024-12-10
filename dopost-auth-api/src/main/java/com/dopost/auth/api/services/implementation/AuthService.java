@@ -68,12 +68,14 @@ public class AuthService implements IAuthService {
 	}
 
 	private User buildUser(RegisterDto dto) {
+		log.info("Building user for register with data: {}", dto);
 		User user = User.builder().fullName(dto.getFullName()).username(dto.getUsername())
 				.password(passwordEncoder.encode(dto.getPassword())).roles(buildRoles(false)).build();
 		return userRepository.save(user);
 	}
 
 	private List<RoleEnum> buildRoles(boolean admin) {
+		log.info("Building roles, admin: {}", admin);
 		List<RoleEnum> roles = new ArrayList<>();
 
 		if (admin) {
